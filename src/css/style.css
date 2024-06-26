@@ -103,6 +103,14 @@ body {
   font-weight: var(--weight-semibold);
 }
 
+.theme-switch {
+  --mt: 10px;
+
+  margin-block-start: var(--mt);
+  /* Fallback */
+  margin-top: var(--mt);
+}
+
 .navbar #logo img {
   display: block;
   width: 40px;
@@ -279,7 +287,8 @@ body {
   }
 
   .nav-menu.active {
-    right: 20px;
+    width: 95dvw;
+    right: 2.55dvw;
   }
 
   .nav-menu .nav-link {
@@ -304,9 +313,9 @@ body {
     padding: 0.2rem 0.4rem;
   }
 
-  .hamburger.active {
+  /* .hamburger.active {
     border: 1px dotted gray;
-  }
+  } */
 
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
