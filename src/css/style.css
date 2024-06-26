@@ -103,14 +103,6 @@ body {
   font-weight: var(--weight-semibold);
 }
 
-.theme-switch {
-  --mt: 10px;
-
-  margin-block-start: var(--mt);
-  /* Fallback */
-  margin-top: var(--mt);
-}
-
 .navbar #logo img {
   display: block;
   width: 40px;
@@ -311,6 +303,14 @@ body {
     display: block;
     cursor: pointer;
     padding: 0.2rem 0.4rem;
+  }
+
+  .theme-switch {
+    --mt: 10px;
+  
+    margin-block-start: var(--mt);
+    /* Fallback */
+    margin-top: var(--mt);
   }
 
   /* .hamburger.active {
