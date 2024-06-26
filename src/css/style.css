@@ -336,6 +336,14 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .card {
+    box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  .project-info {
+    opacity: 1;
+  }
+
   .header-container .btn {
     border-radius: 5px;
     width: 80%;

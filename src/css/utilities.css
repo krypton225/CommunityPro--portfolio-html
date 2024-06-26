@@ -127,7 +127,6 @@ h2::selection {
   color: #ffffff;
   border-radius: 5px;
   transition: 0.4s ease-in-out;
-  cursor: pointer;
 }
 
 .card a {
@@ -135,6 +134,10 @@ h2::selection {
   transition: 0.25s ease-in-out;
   font-size: 1.1rem;
   margin-right: 0.3rem;
+}
+
+.card .project-info .project-link {
+  cursor: pointer;
 }
 
 .card a:hover {
