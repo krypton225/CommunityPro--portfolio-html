@@ -1,5 +1,6 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const root = document.documentElement;
 
 hamburger.addEventListener("click", mobileMenu);
 
@@ -9,14 +10,16 @@ function mobileMenu() {
 }
 
 // Close navbar when link is clicked
-const navLink = document.querySelectorAll(".nav-link");
+function closeMenu(event) {
+  const target = event.target;
 
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
+  if (target.classList.contains("nav-link")) {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
 }
+
+navMenu.addEventListener("click", closeMenu);
 
 // Event Listeners: Handling toggle event
 const toggleSwitch = document.querySelector(
@@ -25,25 +28,15 @@ const toggleSwitch = document.querySelector(
 
 function switchTheme(e) {
   if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
+    root.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
   } else {
-    document.documentElement.setAttribute("data-theme", "light");
+    root.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
   }
 }
 
 toggleSwitch.addEventListener("change", switchTheme, false);
-
-//  Store color theme for future visits
-
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark"); //add this
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light"); //add this
-  }
-}
 
 // Save user preference on load
 
@@ -52,7 +45,7 @@ const currentTheme = localStorage.getItem("theme")
   : null;
 
 if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
+  root.setAttribute("data-theme", currentTheme);
 
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
